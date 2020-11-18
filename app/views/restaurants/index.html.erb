@@ -1,0 +1,15 @@
+<div class="container">
+  <h1>Restaurants</h1>
+
+  <ul>
+    <% @restaurants.each do |restaurant| %>
+    <li>
+      <%= link_to restaurant.name, restaurant_path(restaurant) %> (<%= restaurant.category %>) - Phone: <%= restaurant.phone_number %>
+    </li>
+    <% end %>
+  </ul>
+</div>
+
+<div class="container" class="d-flex">
+    <%= link_to 'Add a new Restaurant', new_restaurant_path, class: 'btn btn-outline-primary mr-3' %>
+</div>
